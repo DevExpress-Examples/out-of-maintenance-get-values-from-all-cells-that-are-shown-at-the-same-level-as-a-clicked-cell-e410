@@ -7,7 +7,7 @@
 # How to Get Cell Values for All Cells at the Same Level
 
 
-![screenshot](https://github.com/DevExpress-Examples/get-values-from-all-cells-that-are-shown-at-the-same-level-as-a-clicked-cell-e4108/blob/13.1.4%2B/images/screenshot.png)
+![screenshot](https://github.com/DevExpress-Examples/get-values-from-all-cells-that-are-shown-at-the-same-level-as-a-clicked-cell-e4108/blob/18.2.4%2B/images/screenshot.png)
 
 API in this example:
 
