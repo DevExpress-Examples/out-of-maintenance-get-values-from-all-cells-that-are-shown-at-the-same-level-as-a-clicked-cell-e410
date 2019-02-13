@@ -1,31 +1,26 @@
-﻿Imports Microsoft.VisualBasic
-Imports System
-Imports System.Collections.Generic
-Imports System.ComponentModel
-Imports System.Data
-Imports System.Drawing
-Imports System.Linq
-Imports System.Text
-Imports System.Windows.Forms
+﻿Imports DevExpress.XtraEditors
 Imports DevExpress.XtraPivotGrid
+Imports System
+Imports System.Data
 
 Namespace WindowsFormsApplication1
 	Partial Public Class Form1
-		Inherits Form
+		Inherits XtraForm
+
 		Public Sub New()
 			InitializeComponent()
 		End Sub
 
-		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
-			' TODO: This line of code loads data into the 'nwindDataSet.Invoices' table. You can move, or remove it, as needed.
+		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
 			Me.invoicesTableAdapter.Fill(Me.nwindDataSet.Invoices)
+			pivotGridControl1.BestFit()
 			pivotGridControl1.BestFitColumnArea()
 
 		End Sub
 
 		Private Sub pivotGridControl1_CellDoubleClick(ByVal sender As Object, ByVal e As DevExpress.XtraPivotGrid.PivotCellEventArgs) Handles pivotGridControl1.CellDoubleClick
-			If e.RowField Is Nothing Then 'Grand Total cell
-				Return
+			If e.RowField Is Nothing Then
+				Return 'Grand Total cell
 			End If
 			Dim columnFields() As PivotGridField = e.GetColumnFields()
 			Dim columnValues(columnFields.Length - 1) As Object
@@ -34,7 +29,7 @@ Namespace WindowsFormsApplication1
 			Next i
 			Dim rowFields() As PivotGridField = e.GetRowFields()
 			Dim rowValues(rowFields.Length - 1) As Object
-			For i As Integer = 0 To rowFields.Length -2
+			For i As Integer = 0 To rowFields.Length - 2
 				rowValues(i) = e.GetFieldValue(rowFields(i))
 			Next i
 
@@ -66,7 +61,7 @@ Namespace WindowsFormsApplication1
 
 			Next lastLevelValue
 			dataGridView1.DataSource = dt
-
+			dataGridView1.AutoResizeColumns()
 		End Sub
 	End Class
 End Namespace

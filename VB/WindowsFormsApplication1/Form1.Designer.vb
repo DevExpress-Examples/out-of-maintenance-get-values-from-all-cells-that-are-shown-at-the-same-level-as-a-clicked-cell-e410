@@ -1,6 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System
-Namespace WindowsFormsApplication1
+﻿Namespace WindowsFormsApplication1
 	Partial Public Class Form1
 		''' <summary>
 		''' Required designer variable.
@@ -32,20 +30,20 @@ Namespace WindowsFormsApplication1
 			Me.pivotGridControl1 = New DevExpress.XtraPivotGrid.PivotGridControl()
 			Me.invoicesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
 			Me.nwindDataSet = New WindowsFormsApplication1.nwindDataSet()
-			Me.fieldCustomersCompanyName = New DevExpress.XtraPivotGrid.PivotGridField()
+			Me.fieldCustomersCompanyName1 = New DevExpress.XtraPivotGrid.PivotGridField()
 			Me.fieldProductName = New DevExpress.XtraPivotGrid.PivotGridField()
 			Me.fieldQuantity = New DevExpress.XtraPivotGrid.PivotGridField()
 			Me.fieldUnitPrice = New DevExpress.XtraPivotGrid.PivotGridField()
 			Me.fieldAmount = New DevExpress.XtraPivotGrid.PivotGridField()
-			Me.invoicesTableAdapter = New WindowsFormsApplication1.nwindDataSetTableAdapters.InvoicesTableAdapter()
 			Me.pivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
 			Me.dataGridView1 = New System.Windows.Forms.DataGridView()
 			Me.splitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-			CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.invoicesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+			Me.invoicesTableAdapter = New WindowsFormsApplication1.nwindDataSetTableAdapters.InvoicesTableAdapter()
+			DirectCast(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+			DirectCast(Me.invoicesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+			DirectCast(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+			DirectCast(Me.dataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+			DirectCast(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.splitContainerControl1.SuspendLayout()
 			Me.SuspendLayout()
 			' 
@@ -75,7 +73,7 @@ Namespace WindowsFormsApplication1
 			' 
 			Me.pivotGridControl1.DataSource = Me.invoicesBindingSource
 			Me.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-			Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() { Me.fieldCustomersCompanyName, Me.fieldOrderYear, Me.fieldProductName, Me.fieldQuantity, Me.fieldUnitPrice, Me.fieldAmount, Me.fieldOrderMonth})
+			Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() { Me.fieldCustomersCompanyName1, Me.fieldOrderYear, Me.fieldProductName, Me.fieldQuantity, Me.fieldUnitPrice, Me.fieldAmount, Me.fieldOrderMonth})
 			pivotGridGroup1.Caption = "Calendar"
 			pivotGridGroup1.Fields.Add(Me.fieldOrderYear)
 			pivotGridGroup1.Fields.Add(Me.fieldOrderMonth)
@@ -84,9 +82,10 @@ Namespace WindowsFormsApplication1
 			Me.pivotGridControl1.Groups.AddRange(New DevExpress.XtraPivotGrid.PivotGridGroup() { pivotGridGroup1})
 			Me.pivotGridControl1.Location = New System.Drawing.Point(0, 0)
 			Me.pivotGridControl1.Name = "pivotGridControl1"
-			Me.pivotGridControl1.Size = New System.Drawing.Size(600, 406)
+			Me.pivotGridControl1.Size = New System.Drawing.Size(590, 406)
 			Me.pivotGridControl1.TabIndex = 0
-'			Me.pivotGridControl1.CellDoubleClick += New DevExpress.XtraPivotGrid.PivotCellEventHandler(Me.pivotGridControl1_CellDoubleClick);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.pivotGridControl1.CellDoubleClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.pivotGridControl1_CellDoubleClick);
 			' 
 			' invoicesBindingSource
 			' 
@@ -98,17 +97,19 @@ Namespace WindowsFormsApplication1
 			Me.nwindDataSet.DataSetName = "nwindDataSet"
 			Me.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 			' 
-			' fieldCustomersCompanyName
+			' fieldCustomersCompanyName1
 			' 
-			Me.fieldCustomersCompanyName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-			Me.fieldCustomersCompanyName.AreaIndex = 0
-			Me.fieldCustomersCompanyName.FieldName = "Customers_CompanyName"
-			Me.fieldCustomersCompanyName.Name = "fieldCustomersCompanyName"
+			Me.fieldCustomersCompanyName1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+			Me.fieldCustomersCompanyName1.AreaIndex = 0
+			Me.fieldCustomersCompanyName1.Caption = "Company"
+			Me.fieldCustomersCompanyName1.FieldName = "Customers_CompanyName"
+			Me.fieldCustomersCompanyName1.Name = "fieldCustomersCompanyName1"
 			' 
 			' fieldProductName
 			' 
 			Me.fieldProductName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
 			Me.fieldProductName.AreaIndex = 1
+			Me.fieldProductName.Caption = "Product"
 			Me.fieldProductName.FieldName = "ProductName"
 			Me.fieldProductName.Name = "fieldProductName"
 			' 
@@ -116,6 +117,7 @@ Namespace WindowsFormsApplication1
 			' 
 			Me.fieldQuantity.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
 			Me.fieldQuantity.AreaIndex = 0
+			Me.fieldQuantity.Caption = "Qty"
 			Me.fieldQuantity.FieldName = "Quantity"
 			Me.fieldQuantity.Name = "fieldQuantity"
 			' 
@@ -138,10 +140,6 @@ Namespace WindowsFormsApplication1
 			Me.fieldAmount.UnboundExpression = "[Quantity] * [UnitPrice]"
 			Me.fieldAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal
 			' 
-			' invoicesTableAdapter
-			' 
-			Me.invoicesTableAdapter.ClearBeforeFill = True
-			' 
 			' pivotGridField1
 			' 
 			Me.pivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
@@ -154,11 +152,14 @@ Namespace WindowsFormsApplication1
 			' 
 			' dataGridView1
 			' 
+			Me.dataGridView1.AllowUserToAddRows = False
+			Me.dataGridView1.AllowUserToDeleteRows = False
 			Me.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 			Me.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
 			Me.dataGridView1.Location = New System.Drawing.Point(0, 0)
 			Me.dataGridView1.Name = "dataGridView1"
-			Me.dataGridView1.Size = New System.Drawing.Size(527, 406)
+			Me.dataGridView1.ReadOnly = True
+			Me.dataGridView1.Size = New System.Drawing.Size(284, 406)
 			Me.dataGridView1.TabIndex = 1
 			' 
 			' splitContainerControl1
@@ -170,25 +171,30 @@ Namespace WindowsFormsApplication1
 			Me.splitContainerControl1.Panel1.Text = "Panel1"
 			Me.splitContainerControl1.Panel2.Controls.Add(Me.dataGridView1)
 			Me.splitContainerControl1.Panel2.Text = "Panel2"
-			Me.splitContainerControl1.Size = New System.Drawing.Size(1132, 406)
-			Me.splitContainerControl1.SplitterPosition = 600
+			Me.splitContainerControl1.Size = New System.Drawing.Size(879, 406)
+			Me.splitContainerControl1.SplitterPosition = 590
 			Me.splitContainerControl1.TabIndex = 2
 			Me.splitContainerControl1.Text = "splitContainerControl1"
+			' 
+			' invoicesTableAdapter
+			' 
+			Me.invoicesTableAdapter.ClearBeforeFill = True
 			' 
 			' Form1
 			' 
 			Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
 			Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-			Me.ClientSize = New System.Drawing.Size(1132, 406)
+			Me.ClientSize = New System.Drawing.Size(879, 406)
 			Me.Controls.Add(Me.splitContainerControl1)
 			Me.Name = "Form1"
-			Me.Text = "Form1"
-'			Me.Load += New System.EventHandler(Me.Form1_Load);
-			CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.invoicesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+			Me.Text = "Double click a cell to display the same level data"
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.Form1_Load);
+			DirectCast(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+			DirectCast(Me.invoicesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+			DirectCast(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+			DirectCast(Me.dataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+			DirectCast(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.splitContainerControl1.ResumeLayout(False)
 			Me.ResumeLayout(False)
 
@@ -200,7 +206,7 @@ Namespace WindowsFormsApplication1
 		Private nwindDataSet As nwindDataSet
 		Private invoicesBindingSource As System.Windows.Forms.BindingSource
 		Private invoicesTableAdapter As WindowsFormsApplication1.nwindDataSetTableAdapters.InvoicesTableAdapter
-		Private fieldCustomersCompanyName As DevExpress.XtraPivotGrid.PivotGridField
+		Private fieldCustomersCompanyName1 As DevExpress.XtraPivotGrid.PivotGridField
 		Private fieldOrderYear As DevExpress.XtraPivotGrid.PivotGridField
 		Private fieldProductName As DevExpress.XtraPivotGrid.PivotGridField
 		Private fieldQuantity As DevExpress.XtraPivotGrid.PivotGridField

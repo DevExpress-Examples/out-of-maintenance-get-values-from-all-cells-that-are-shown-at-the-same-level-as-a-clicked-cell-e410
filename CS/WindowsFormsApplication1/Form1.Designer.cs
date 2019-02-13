@@ -35,15 +35,15 @@
             this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nwindDataSet = new WindowsFormsApplication1.nwindDataSet();
-            this.fieldCustomersCompanyName = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldCustomersCompanyName1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldProductName = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldQuantity = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldUnitPrice = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldAmount = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.invoicesTableAdapter = new WindowsFormsApplication1.nwindDataSetTableAdapters.InvoicesTableAdapter();
             this.pivotGridField1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.invoicesTableAdapter = new WindowsFormsApplication1.nwindDataSetTableAdapters.InvoicesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).BeginInit();
@@ -79,7 +79,7 @@
             this.pivotGridControl1.DataSource = this.invoicesBindingSource;
             this.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pivotGridControl1.Fields.AddRange(new DevExpress.XtraPivotGrid.PivotGridField[] {
-            this.fieldCustomersCompanyName,
+            this.fieldCustomersCompanyName1,
             this.fieldOrderYear,
             this.fieldProductName,
             this.fieldQuantity,
@@ -95,7 +95,7 @@
             pivotGridGroup1});
             this.pivotGridControl1.Location = new System.Drawing.Point(0, 0);
             this.pivotGridControl1.Name = "pivotGridControl1";
-            this.pivotGridControl1.Size = new System.Drawing.Size(600, 406);
+            this.pivotGridControl1.Size = new System.Drawing.Size(590, 406);
             this.pivotGridControl1.TabIndex = 0;
             this.pivotGridControl1.CellDoubleClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.pivotGridControl1_CellDoubleClick);
             // 
@@ -109,17 +109,19 @@
             this.nwindDataSet.DataSetName = "nwindDataSet";
             this.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // fieldCustomersCompanyName
+            // fieldCustomersCompanyName1
             // 
-            this.fieldCustomersCompanyName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldCustomersCompanyName.AreaIndex = 0;
-            this.fieldCustomersCompanyName.FieldName = "Customers_CompanyName";
-            this.fieldCustomersCompanyName.Name = "fieldCustomersCompanyName";
+            this.fieldCustomersCompanyName1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldCustomersCompanyName1.AreaIndex = 0;
+            this.fieldCustomersCompanyName1.Caption = "Company";
+            this.fieldCustomersCompanyName1.FieldName = "Customers_CompanyName";
+            this.fieldCustomersCompanyName1.Name = "fieldCustomersCompanyName1";
             // 
             // fieldProductName
             // 
             this.fieldProductName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
             this.fieldProductName.AreaIndex = 1;
+            this.fieldProductName.Caption = "Product";
             this.fieldProductName.FieldName = "ProductName";
             this.fieldProductName.Name = "fieldProductName";
             // 
@@ -127,6 +129,7 @@
             // 
             this.fieldQuantity.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
             this.fieldQuantity.AreaIndex = 0;
+            this.fieldQuantity.Caption = "Qty";
             this.fieldQuantity.FieldName = "Quantity";
             this.fieldQuantity.Name = "fieldQuantity";
             // 
@@ -149,10 +152,6 @@
             this.fieldAmount.UnboundExpression = "[Quantity] * [UnitPrice]";
             this.fieldAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             // 
-            // invoicesTableAdapter
-            // 
-            this.invoicesTableAdapter.ClearBeforeFill = true;
-            // 
             // pivotGridField1
             // 
             this.pivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
@@ -165,11 +164,14 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(527, 406);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(284, 406);
             this.dataGridView1.TabIndex = 1;
             // 
             // splitContainerControl1
@@ -181,19 +183,23 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1132, 406);
-            this.splitContainerControl1.SplitterPosition = 600;
+            this.splitContainerControl1.Size = new System.Drawing.Size(879, 406);
+            this.splitContainerControl1.SplitterPosition = 590;
             this.splitContainerControl1.TabIndex = 2;
             this.splitContainerControl1.Text = "splitContainerControl1";
+            // 
+            // invoicesTableAdapter
+            // 
+            this.invoicesTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1132, 406);
+            this.ClientSize = new System.Drawing.Size(879, 406);
             this.Controls.Add(this.splitContainerControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Double click a cell to display the same level data";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
@@ -211,7 +217,7 @@
         private nwindDataSet nwindDataSet;
         private System.Windows.Forms.BindingSource invoicesBindingSource;
         private WindowsFormsApplication1.nwindDataSetTableAdapters.InvoicesTableAdapter invoicesTableAdapter;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldCustomersCompanyName;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldCustomersCompanyName1;
         private DevExpress.XtraPivotGrid.PivotGridField fieldOrderYear;
         private DevExpress.XtraPivotGrid.PivotGridField fieldProductName;
         private DevExpress.XtraPivotGrid.PivotGridField fieldQuantity;

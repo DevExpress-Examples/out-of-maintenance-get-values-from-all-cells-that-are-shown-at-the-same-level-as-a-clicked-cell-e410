@@ -4,12 +4,16 @@
 * [Form1.cs](./CS/WindowsFormsApplication1/Form1.cs) (VB: [Form1.vb](./VB/WindowsFormsApplication1/Form1.vb))
 * [Program.cs](./CS/WindowsFormsApplication1/Program.cs) (VB: [Program.vb](./VB/WindowsFormsApplication1/Program.vb))
 <!-- default file list end -->
-# Get values from all cells that are shown at the same level as a clicked cell
+# How to Get Cell Values for All Cells at the Same Level
 
 
-<p>You can use the <a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraPivotGridPivotGridControl_GetCellValuetopic"><u>GetCellValue(Object[] columnValues, Object[] rowValues, PivotGridField dataField);</u></a> method to get a value from a cell by corresponding row and column field values. To iterate through the last level field values use the <a href="http://documentation.devexpress.com/#CoreLibraries/DevExpressXtraPivotGridPivotGridFieldBase_GetVisibleValuestopic"><u>PivotGridFieldBase.GetVisibleValues</u></a> method. To get information about higher level values corresponding to a clicked cell use the <a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraPivotGridPivotCellBaseEventArgs_GetColumnFieldstopic"><u>PivotCellBaseEventArgs.GetColumnFields</u></a>, <a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraPivotGridPivotCellBaseEventArgs_GetRowFieldstopic"><u>PivotCellBaseEventArgs.GetRowFields</u></a> and <a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraPivotGridPivotCellBaseEventArgs_GetFieldValuetopic"><u>PivotCellBaseEventArgs.GetFieldValue</u></a> methods.</p><br />
+![screenshot](https://github.com/DevExpress-Examples/get-values-from-all-cells-that-are-shown-at-the-same-level-as-a-clicked-cell-e4108/blob/13.1.4%2B/images/screenshot.png)
 
+API in this example:
 
-<br/>
-
-
+* [PivotGridControl.CellDoubleClick](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.CellDoubleClick) event
+* [PivotCellEventArgs.GetColumnFields](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotCellEventArgsBase-3.GetColumnFields) method
+* [PivotCellEventArgs.GetRowFields](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotCellEventArgsBase-3.GetRowFields) method
+* [PivotCellEventArgs.GetFieldValue](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotCellEventArgsBase-3.GetFieldValue(-0)) method
+* [PivotCellDisplayTextEventArgs.GetCellValue](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.PivotCellBaseEventArgs.GetCellValue(System.Object---System.Object---DevExpress.Xpf.PivotGrid.PivotGridField)) method
+* [PivotGridFieldBase.GetVisibleValues](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotGridFieldBase.GetVisibleValues) method
