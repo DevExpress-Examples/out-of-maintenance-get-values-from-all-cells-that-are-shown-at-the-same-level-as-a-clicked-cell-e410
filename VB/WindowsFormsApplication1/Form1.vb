@@ -12,13 +12,14 @@ Namespace WindowsFormsApplication1
 		End Sub
 
 		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
-			Me.invoicesTableAdapter.Fill(Me.nwindDataSet.Invoices)
+			excelDataSource1.FileName = "SalesPerson.xlsx"
+			excelDataSource1.Fill()
 			pivotGridControl1.BestFit()
-			pivotGridControl1.BestFitColumnArea()
+			pivotGridControl1.BestFitDataHeaders(True)
 
 		End Sub
 
-		Private Sub pivotGridControl1_CellDoubleClick(ByVal sender As Object, ByVal e As DevExpress.XtraPivotGrid.PivotCellEventArgs) Handles pivotGridControl1.CellDoubleClick
+		Private Sub pivotGridControl1_CellDoubleClick(ByVal sender As Object, ByVal e As PivotCellEventArgs) Handles pivotGridControl1.CellDoubleClick
 			If e.RowField Is Nothing Then
 				Return 'Grand Total cell
 			End If
@@ -60,8 +61,8 @@ Namespace WindowsFormsApplication1
 				dt.Rows.Add(row)
 
 			Next lastLevelValue
-			dataGridView1.DataSource = dt
-			dataGridView1.AutoResizeColumns()
+			gridControl1.DataSource = dt
+			gridView1.BestFitColumns()
 		End Sub
 	End Class
 End Namespace

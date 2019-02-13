@@ -14,13 +14,14 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.invoicesTableAdapter.Fill(this.nwindDataSet.Invoices);
+            excelDataSource1.FileName = "SalesPerson.xlsx";
+            excelDataSource1.Fill();
             pivotGridControl1.BestFit();
-            pivotGridControl1.BestFitColumnArea();
+            pivotGridControl1.BestFitDataHeaders(true);
 
         }
 
-        private void pivotGridControl1_CellDoubleClick(object sender, DevExpress.XtraPivotGrid.PivotCellEventArgs e)
+        private void pivotGridControl1_CellDoubleClick(object sender, PivotCellEventArgs e)
         {
             if (e.RowField == null) return; //Grand Total cell
             PivotGridField[] columnFields = e.GetColumnFields();
@@ -54,8 +55,8 @@ namespace WindowsFormsApplication1
                 dt.Rows.Add(row);
                 
             }
-            dataGridView1.DataSource = dt;
-            dataGridView1.AutoResizeColumns();
+            gridControl1.DataSource = dt;
+            gridView1.BestFitColumns();
         }
     }
 }

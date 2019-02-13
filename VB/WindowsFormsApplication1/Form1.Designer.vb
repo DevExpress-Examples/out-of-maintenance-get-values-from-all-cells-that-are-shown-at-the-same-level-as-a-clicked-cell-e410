@@ -23,62 +23,46 @@
 		''' the contents of this method with the code editor.
 		''' </summary>
 		Private Sub InitializeComponent()
-			Me.components = New System.ComponentModel.Container()
 			Dim pivotGridGroup1 As New DevExpress.XtraPivotGrid.PivotGridGroup()
-			Me.fieldOrderYear = New DevExpress.XtraPivotGrid.PivotGridField()
-			Me.fieldOrderMonth = New DevExpress.XtraPivotGrid.PivotGridField()
+			Dim resources As New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+			Dim fieldInfo1 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo2 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo3 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo4 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo5 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo6 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo7 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo8 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo9 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo10 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo11 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo12 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim excelWorksheetSettings1 As New DevExpress.DataAccess.Excel.ExcelWorksheetSettings()
+			Dim excelSourceOptions1 As New DevExpress.DataAccess.Excel.ExcelSourceOptions(excelWorksheetSettings1)
 			Me.pivotGridControl1 = New DevExpress.XtraPivotGrid.PivotGridControl()
-			Me.invoicesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-			Me.nwindDataSet = New WindowsFormsApplication1.nwindDataSet()
-			Me.fieldCustomersCompanyName1 = New DevExpress.XtraPivotGrid.PivotGridField()
-			Me.fieldProductName = New DevExpress.XtraPivotGrid.PivotGridField()
-			Me.fieldQuantity = New DevExpress.XtraPivotGrid.PivotGridField()
-			Me.fieldUnitPrice = New DevExpress.XtraPivotGrid.PivotGridField()
-			Me.fieldAmount = New DevExpress.XtraPivotGrid.PivotGridField()
+			Me.excelDataSource1 = New DevExpress.DataAccess.Excel.ExcelDataSource()
+			Me.fieldCategoryName1 = New DevExpress.XtraPivotGrid.PivotGridField()
+			Me.fieldProductName1 = New DevExpress.XtraPivotGrid.PivotGridField()
+			Me.fieldSalesPerson1 = New DevExpress.XtraPivotGrid.PivotGridField()
+			Me.fieldOrderDate1 = New DevExpress.XtraPivotGrid.PivotGridField()
+			Me.fieldExtendedPrice1 = New DevExpress.XtraPivotGrid.PivotGridField()
 			Me.pivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
-			Me.dataGridView1 = New System.Windows.Forms.DataGridView()
 			Me.splitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-			Me.invoicesTableAdapter = New WindowsFormsApplication1.nwindDataSetTableAdapters.InvoicesTableAdapter()
+			Me.gridControl1 = New DevExpress.XtraGrid.GridControl()
+			Me.gridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
 			DirectCast(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-			DirectCast(Me.invoicesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-			DirectCast(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-			DirectCast(Me.dataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 			DirectCast(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.splitContainerControl1.SuspendLayout()
+			DirectCast(Me.gridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+			DirectCast(Me.gridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.SuspendLayout()
-			' 
-			' fieldOrderYear
-			' 
-			Me.fieldOrderYear.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
-			Me.fieldOrderYear.AreaIndex = 0
-			Me.fieldOrderYear.Caption = "Year"
-			Me.fieldOrderYear.ExpandedInFieldsGroup = False
-			Me.fieldOrderYear.FieldName = "OrderDate"
-			Me.fieldOrderYear.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.DateYear
-			Me.fieldOrderYear.Name = "fieldOrderYear"
-			Me.fieldOrderYear.UnboundFieldName = "fieldOrderYear"
-			' 
-			' fieldOrderMonth
-			' 
-			Me.fieldOrderMonth.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
-			Me.fieldOrderMonth.AreaIndex = 1
-			Me.fieldOrderMonth.Caption = "Month"
-			Me.fieldOrderMonth.FieldName = "OrderDate"
-			Me.fieldOrderMonth.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.DateMonth
-			Me.fieldOrderMonth.Name = "fieldOrderMonth"
-			Me.fieldOrderMonth.UnboundFieldName = "fieldOrderMonth"
-			Me.fieldOrderMonth.Visible = False
 			' 
 			' pivotGridControl1
 			' 
-			Me.pivotGridControl1.DataSource = Me.invoicesBindingSource
+			Me.pivotGridControl1.DataSource = Me.excelDataSource1
 			Me.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-			Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() { Me.fieldCustomersCompanyName1, Me.fieldOrderYear, Me.fieldProductName, Me.fieldQuantity, Me.fieldUnitPrice, Me.fieldAmount, Me.fieldOrderMonth})
+			Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() { Me.fieldCategoryName1, Me.fieldProductName1, Me.fieldSalesPerson1, Me.fieldOrderDate1, Me.fieldExtendedPrice1})
 			pivotGridGroup1.Caption = "Calendar"
-			pivotGridGroup1.Fields.Add(Me.fieldOrderYear)
-			pivotGridGroup1.Fields.Add(Me.fieldOrderMonth)
-			pivotGridGroup1.Hierarchy = Nothing
-			pivotGridGroup1.ShowNewValues = True
 			Me.pivotGridControl1.Groups.AddRange(New DevExpress.XtraPivotGrid.PivotGridGroup() { pivotGridGroup1})
 			Me.pivotGridControl1.Location = New System.Drawing.Point(0, 0)
 			Me.pivotGridControl1.Name = "pivotGridControl1"
@@ -87,58 +71,82 @@
 'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
 'ORIGINAL LINE: this.pivotGridControl1.CellDoubleClick += new DevExpress.XtraPivotGrid.PivotCellEventHandler(this.pivotGridControl1_CellDoubleClick);
 			' 
-			' invoicesBindingSource
+			' excelDataSource1
 			' 
-			Me.invoicesBindingSource.DataMember = "Invoices"
-			Me.invoicesBindingSource.DataSource = Me.nwindDataSet
+			Me.excelDataSource1.FileName = "C:\Data\SalesPerson.xlsx"
+			Me.excelDataSource1.Name = "excelDataSource1"
+			Me.excelDataSource1.ResultSchemaSerializable = resources.GetString("excelDataSource1.ResultSchemaSerializable")
+			fieldInfo1.Name = "CategoryName"
+			fieldInfo1.Type = GetType(String)
+			fieldInfo2.Name = "Country"
+			fieldInfo2.Type = GetType(String)
+			fieldInfo3.Name = "FirstName"
+			fieldInfo3.Type = GetType(String)
+			fieldInfo4.Name = "LastName"
+			fieldInfo4.Type = GetType(String)
+			fieldInfo5.Name = "ProductName"
+			fieldInfo5.Type = GetType(String)
+			fieldInfo6.Name = "Sales Person"
+			fieldInfo6.Type = GetType(String)
+			fieldInfo7.Name = "OrderDate"
+			fieldInfo7.Type = GetType(Date)
+			fieldInfo8.Name = "OrderID"
+			fieldInfo8.Type = GetType(Double)
+			fieldInfo9.Name = "Quantity"
+			fieldInfo9.Type = GetType(Double)
+			fieldInfo10.Name = "Discount"
+			fieldInfo10.Type = GetType(Double)
+			fieldInfo11.Name = "Extended Price"
+			fieldInfo11.Type = GetType(Double)
+			fieldInfo12.Name = "UnitPrice"
+			fieldInfo12.Type = GetType(Double)
+			Me.excelDataSource1.Schema.AddRange(New DevExpress.DataAccess.Excel.FieldInfo() { fieldInfo1, fieldInfo2, fieldInfo3, fieldInfo4, fieldInfo5, fieldInfo6, fieldInfo7, fieldInfo8, fieldInfo9, fieldInfo10, fieldInfo11, fieldInfo12})
+			excelWorksheetSettings1.CellRange = Nothing
+			excelWorksheetSettings1.WorksheetName = "Data"
+			excelSourceOptions1.ImportSettings = excelWorksheetSettings1
+			Me.excelDataSource1.SourceOptions = excelSourceOptions1
 			' 
-			' nwindDataSet
+			' fieldCategoryName1
 			' 
-			Me.nwindDataSet.DataSetName = "nwindDataSet"
-			Me.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+			Me.fieldCategoryName1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+			Me.fieldCategoryName1.AreaIndex = 0
+			Me.fieldCategoryName1.Caption = "Category Name"
+			Me.fieldCategoryName1.FieldName = "CategoryName"
+			Me.fieldCategoryName1.Name = "fieldCategoryName1"
 			' 
-			' fieldCustomersCompanyName1
+			' fieldProductName1
 			' 
-			Me.fieldCustomersCompanyName1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-			Me.fieldCustomersCompanyName1.AreaIndex = 0
-			Me.fieldCustomersCompanyName1.Caption = "Company"
-			Me.fieldCustomersCompanyName1.FieldName = "Customers_CompanyName"
-			Me.fieldCustomersCompanyName1.Name = "fieldCustomersCompanyName1"
+			Me.fieldProductName1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+			Me.fieldProductName1.AreaIndex = 1
+			Me.fieldProductName1.Caption = "Product Name"
+			Me.fieldProductName1.FieldName = "ProductName"
+			Me.fieldProductName1.Name = "fieldProductName1"
 			' 
-			' fieldProductName
+			' fieldSalesPerson1
 			' 
-			Me.fieldProductName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-			Me.fieldProductName.AreaIndex = 1
-			Me.fieldProductName.Caption = "Product"
-			Me.fieldProductName.FieldName = "ProductName"
-			Me.fieldProductName.Name = "fieldProductName"
+			Me.fieldSalesPerson1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
+			Me.fieldSalesPerson1.AreaIndex = 1
+			Me.fieldSalesPerson1.Caption = "Sales Person"
+			Me.fieldSalesPerson1.FieldName = "Sales Person"
+			Me.fieldSalesPerson1.Name = "fieldSalesPerson1"
 			' 
-			' fieldQuantity
+			' fieldOrderDate1
 			' 
-			Me.fieldQuantity.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-			Me.fieldQuantity.AreaIndex = 0
-			Me.fieldQuantity.Caption = "Qty"
-			Me.fieldQuantity.FieldName = "Quantity"
-			Me.fieldQuantity.Name = "fieldQuantity"
+			Me.fieldOrderDate1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
+			Me.fieldOrderDate1.AreaIndex = 0
+			Me.fieldOrderDate1.Caption = "OrderDate"
+			Me.fieldOrderDate1.FieldName = "OrderDate"
+			Me.fieldOrderDate1.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.DateYear
+			Me.fieldOrderDate1.Name = "fieldOrderDate1"
+			Me.fieldOrderDate1.UnboundFieldName = "fieldOrderDate1"
 			' 
-			' fieldUnitPrice
+			' fieldExtendedPrice1
 			' 
-			Me.fieldUnitPrice.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-			Me.fieldUnitPrice.AreaIndex = 1
-			Me.fieldUnitPrice.FieldName = "UnitPrice"
-			Me.fieldUnitPrice.Name = "fieldUnitPrice"
-			' 
-			' fieldAmount
-			' 
-			Me.fieldAmount.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-			Me.fieldAmount.AreaIndex = 2
-			Me.fieldAmount.Caption = "Amount"
-			Me.fieldAmount.CellFormat.FormatString = "C0"
-			Me.fieldAmount.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-			Me.fieldAmount.FieldName = "Amount"
-			Me.fieldAmount.Name = "fieldAmount"
-			Me.fieldAmount.UnboundExpression = "[Quantity] * [UnitPrice]"
-			Me.fieldAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal
+			Me.fieldExtendedPrice1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+			Me.fieldExtendedPrice1.AreaIndex = 0
+			Me.fieldExtendedPrice1.Caption = "Extended Price"
+			Me.fieldExtendedPrice1.FieldName = "Extended Price"
+			Me.fieldExtendedPrice1.Name = "fieldExtendedPrice1"
 			' 
 			' pivotGridField1
 			' 
@@ -150,18 +158,6 @@
 			Me.pivotGridField1.Name = "pivotGridField1"
 			Me.pivotGridField1.UnboundFieldName = "fieldOrderDate"
 			' 
-			' dataGridView1
-			' 
-			Me.dataGridView1.AllowUserToAddRows = False
-			Me.dataGridView1.AllowUserToDeleteRows = False
-			Me.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-			Me.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-			Me.dataGridView1.Location = New System.Drawing.Point(0, 0)
-			Me.dataGridView1.Name = "dataGridView1"
-			Me.dataGridView1.ReadOnly = True
-			Me.dataGridView1.Size = New System.Drawing.Size(284, 406)
-			Me.dataGridView1.TabIndex = 1
-			' 
 			' splitContainerControl1
 			' 
 			Me.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -169,33 +165,48 @@
 			Me.splitContainerControl1.Name = "splitContainerControl1"
 			Me.splitContainerControl1.Panel1.Controls.Add(Me.pivotGridControl1)
 			Me.splitContainerControl1.Panel1.Text = "Panel1"
-			Me.splitContainerControl1.Panel2.Controls.Add(Me.dataGridView1)
+			Me.splitContainerControl1.Panel2.Controls.Add(Me.gridControl1)
 			Me.splitContainerControl1.Panel2.Text = "Panel2"
-			Me.splitContainerControl1.Size = New System.Drawing.Size(879, 406)
+			Me.splitContainerControl1.Size = New System.Drawing.Size(887, 406)
 			Me.splitContainerControl1.SplitterPosition = 590
 			Me.splitContainerControl1.TabIndex = 2
 			Me.splitContainerControl1.Text = "splitContainerControl1"
 			' 
-			' invoicesTableAdapter
+			' gridControl1
 			' 
-			Me.invoicesTableAdapter.ClearBeforeFill = True
+			Me.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+			Me.gridControl1.Location = New System.Drawing.Point(0, 0)
+			Me.gridControl1.MainView = Me.gridView1
+			Me.gridControl1.Name = "gridControl1"
+			Me.gridControl1.Size = New System.Drawing.Size(287, 406)
+			Me.gridControl1.TabIndex = 0
+			Me.gridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() { Me.gridView1})
+			' 
+			' gridView1
+			' 
+			Me.gridView1.GridControl = Me.gridControl1
+			Me.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always
+			Me.gridView1.Name = "gridView1"
+			Me.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False
+			Me.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False
+			Me.gridView1.OptionsBehavior.Editable = False
+			Me.gridView1.OptionsBehavior.ReadOnly = True
 			' 
 			' Form1
 			' 
 			Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
 			Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-			Me.ClientSize = New System.Drawing.Size(879, 406)
+			Me.ClientSize = New System.Drawing.Size(887, 406)
 			Me.Controls.Add(Me.splitContainerControl1)
 			Me.Name = "Form1"
 			Me.Text = "Double click a cell to display the same level data"
 'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
 'ORIGINAL LINE: this.Load += new System.EventHandler(this.Form1_Load);
 			DirectCast(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-			DirectCast(Me.invoicesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-			DirectCast(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-			DirectCast(Me.dataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
 			DirectCast(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.splitContainerControl1.ResumeLayout(False)
+			DirectCast(Me.gridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+			DirectCast(Me.gridView1, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.ResumeLayout(False)
 
 		End Sub
@@ -203,19 +214,16 @@
 		#End Region
 
 		Private WithEvents pivotGridControl1 As DevExpress.XtraPivotGrid.PivotGridControl
-		Private nwindDataSet As nwindDataSet
-		Private invoicesBindingSource As System.Windows.Forms.BindingSource
-		Private invoicesTableAdapter As WindowsFormsApplication1.nwindDataSetTableAdapters.InvoicesTableAdapter
-		Private fieldCustomersCompanyName1 As DevExpress.XtraPivotGrid.PivotGridField
-		Private fieldOrderYear As DevExpress.XtraPivotGrid.PivotGridField
-		Private fieldProductName As DevExpress.XtraPivotGrid.PivotGridField
-		Private fieldQuantity As DevExpress.XtraPivotGrid.PivotGridField
-		Private fieldUnitPrice As DevExpress.XtraPivotGrid.PivotGridField
-		Private fieldAmount As DevExpress.XtraPivotGrid.PivotGridField
-		Private fieldOrderMonth As DevExpress.XtraPivotGrid.PivotGridField
 		Private pivotGridField1 As DevExpress.XtraPivotGrid.PivotGridField
-		Private dataGridView1 As System.Windows.Forms.DataGridView
 		Private splitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
+		Private gridControl1 As DevExpress.XtraGrid.GridControl
+		Private gridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+		Private excelDataSource1 As DevExpress.DataAccess.Excel.ExcelDataSource
+		Private fieldCategoryName1 As DevExpress.XtraPivotGrid.PivotGridField
+		Private fieldProductName1 As DevExpress.XtraPivotGrid.PivotGridField
+		Private fieldSalesPerson1 As DevExpress.XtraPivotGrid.PivotGridField
+		Private fieldOrderDate1 As DevExpress.XtraPivotGrid.PivotGridField
+		Private fieldExtendedPrice1 As DevExpress.XtraPivotGrid.PivotGridField
 	End Class
 End Namespace
 
